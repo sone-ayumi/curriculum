@@ -1,0 +1,24 @@
+STP
+
+問１
+Switch３
+
+問２
+
+●RP…Switch１(F0/2）とSwitch（F0/2）、Switch４（E0/2）
+理由
+Switch３をルートブリッジとし、ルートパスコストの最小値を計算すると下記になる。
+Switch１　１９（Switch１ーSwitch３）
+Switch２　２３（Switch２－Switch４ーSwitch３）
+Switch４　４（Switch４ーSwitch３）
+そのため、Switch１(F0/2）とSwitch（F0/2）、Switch４（E0/2）はRPとなる。
+
+●DP…Switch３（E0/1、E0/2）とSwitch４（E0/1）、Switch２（F0/1）
+理由
+RPの向かい側のポートはDPになることに加え、ルートブリッジのポートはDPになることから
+Switch３（E0/1、E0/2）とSwitch４（E0/1）はDPとなる。
+また、Switch１とSwitch２のブリッジIDを比較してより値が小さいSwitch２（F0/1）もDPとなる。
+
+●BP…Switch１（F0/1）
+理由
+上記のどれにも当てはまらないため、Switch１(F0/1)はBPを割り当てる。
